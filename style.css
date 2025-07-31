@@ -1,0 +1,141 @@
+:root {
+    --bg-color: #f4f6fa;
+    --sidebar-color: #222;
+    --task-bg: #fff;
+    --text-color: #333;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --sidebar-color: #1e1e1e;
+    --task-bg: #2a2a2a;
+    --text-color: #f9f9f9;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--sidebar-color);
+    color: #fff;
+    padding: 20px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar li:hover {
+    background: #444;
+}
+
+.toggle-theme {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-top: 1px solid #555;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+input, select, button {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+button {
+    background: #4cafef;
+    color: white;
+    cursor: pointer;
+}
+
+.task-list li {
+    background: var(--task-bg);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.task-list li:hover {
+    transform: translateX(5px);
+}
+
+.priority-high { border-left: 5px solid red; }
+.priority-medium { border-left: 5px solid orange; }
+.priority-low { border-left: 5px solid green; }
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.progress {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    background: #ddd;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: #4caf50;
+    height: 100%;
+    width: 0%;
+}
+
+.dark .progress-bar {
+    background: #333;
+}
